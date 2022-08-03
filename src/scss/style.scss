@@ -1,12 +1,179 @@
-body {
-    background-color: #000;
+@import "reset";
+@import "base";
+
+$temp: rgba(255, 0, 0, .5);
+$fontSize: 1.6rem;
+
+.wrap {
+    max-width: 75rem;
+    margin: 0 auto;
+    //background-color: $temp;
+    font-size: $fontSize;
 }
-body, h1 {
-    text-align: center;
-    color: red;
+.main {
+    position: relative;
+    &__button {
+        position: absolute;
+        display: block;
+        background-color: $temp;
+        &.--index {
+            bottom: 3%;
+            margin: 0 21%;
+            padding: 10%;
+            width: 60%;
+        }
+        &.--result {
+            bottom: 10%;
+            margin: 0 13%;
+            padding: 5.5%;
+            width: 74%;
+        }
+    }
 }
-.test {
-    width: 750px;
-    height: 300px;
-    background: center / cover no-repeat url(../images/oronaminc__waiting.png);
+[data-control="toggle"] {
+    .-image {
+        display: none;
+        &.-on {
+            display: block;
+        }
+    }
+}
+.form {
+
+    &__wrap {
+        padding: 0 10% 10%;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4%;
+    }
+    &__label {
+        display: inline-block;
+        width: 23.5%;
+    }
+    &__input {
+        width: 70%;
+        padding: 2%;
+        border: 1px solid #000;
+    }
+    &__success {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4%;
+        &--title {
+            width: 23.5%;
+        }
+        &--radio {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 70%;
+            gap: 4%;
+        }
+    }
+    &__radio {
+        &-label {
+            display: block;
+            position: relative;
+        }
+        &[aria-checked="true"] + &-label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3.4rem;
+            height: 63%;
+            background: center / cover no-repeat url('../images/oronaminc__radio--checked.png');
+        }
+    }
+    &__checkbox {
+        &-label {
+            display: block;
+            position: relative;
+        }
+        &[aria-checked="true"] + &-label::before {
+            content: '';
+            position: absolute;
+            top: 18%;
+            left: 3.5%;
+            width: 3.8rem;
+            height: 42%;
+            background: center / cover no-repeat url('../images/oronaminc__radio--checked.png');
+        }
+    }
+    &__terms {
+        position: relative;
+        margin-bottom: 10%;
+        &-opener {
+            position: absolute;
+            top: 0;
+            right: 2%;
+            width: 20%;
+            height: 100%;
+            background: $temp;
+        }
+    }
+    &__button {
+        display: block;
+        width: 54%;
+        margin: 0 auto;
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    &[aria-hidden=false] {
+        display: block;
+    }
+    &[aria-hidden=true] {
+        display: none;
+    }
+    &__document {
+        width: 47.5rem;
+    }
+}
+.footer {
+    position: relative;
+    &__sns {
+        position: absolute;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        width: 46%;
+        padding: 6% 5%;
+    }
+    &__item {
+        height: 5rem;
+    }
+    &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    body, html {
+        font-size: 6px;
+    }
+    .modal {
+        &__document {
+            width: 100%;
+        }
+    }
+    .footer {
+        &__sns {
+            gap: 1rem;
+        }
+    }
 }
