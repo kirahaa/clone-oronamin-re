@@ -13,11 +13,19 @@ resultImage.forEach(function(element, index) {
         images[0].classList.add("-on");
     }
 })
-
-document.querySelector('#resultBtn').addEventListener( "click",function () {
-    if(result === 'fail') {
-        location.href = "./form.html?fail";
-    } else {
-        location.href = "./form.html?win";
-    }
+$(function() {
+    $('#resultBtn').on('click', function () {
+        if(result === 'fail') {
+            location.href = "./form.html?fail";
+        } else {
+            location.href = "./form.html?win";
+        }
+    })
 })
+// document.querySelector('#resultBtn').addEventListener( "click",function () {
+//     if(result === 'fail') {
+//         location.href = "./form.html?fail";
+//     } else {
+//         location.href = "./form.html?win";
+//     }
+// })

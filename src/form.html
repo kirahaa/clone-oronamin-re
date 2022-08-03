@@ -17,25 +17,25 @@
     </header>
     <div class="main">
         <img src="images/oronaminc__enter--title.png" alt="경품 응모를 위한 개인정보를 입력해주세요!" class="-image">
-        <form data-control="store" data-campaign="lotte-drink-camp1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
+        <form id="data-form" data-control="store" data-campaign="lotte-drink-camp1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
             <div class="form__wrap">
                 <div class="form__list">
                     <label for="name" class="form__label">
                         <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
                     </label>
-                    <input type="text" id="name" class="form__input" aria-required="true">
+                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true">
                 </div>
                 <div class="form__list">
                     <label for="contact" class="form__label">
                         <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
                     </label>
-                    <input type="text" id="contact" class="form__input" aria-required="true">
+                    <input type="text" name="oro_contact" id="contact" class="form__input" aria-required="true">
                 </div>
                 <div class="form__list">
                     <label for="area" class="form__label">
                         <img src="images/oronaminc__label--location.png" alt="지역" class="-image">
                     </label>
-                    <select id="area" class="form__input">
+                    <select name="oro_area" id="area" class="form__input">
                         <option>지역을 선택해주세요</option>
                         <option>강원</option>
                         <option>경기</option>
@@ -46,7 +46,7 @@
                     <label for="age" class="form__label">
                         <img src="images/oronaminc__label--age.png" alt="연령대" class="-image">
                     </label>
-                    <select id="age" class="form__input">
+                    <select name="oro_age" id="age" class="form__input">
                         <option>연령대를 선택해주세요</option>
                         <option>10대</option>
                         <option>20대</option>
@@ -110,5 +110,12 @@
         </ul>
     </footer>
 </div>
+<script>
+    async function get() {
+        let result = await backend.reqCampaignList({
+            campaignCode: 'lotte-drink-camp1'
+        });
+    }
+</script>
 </body>
 </html>

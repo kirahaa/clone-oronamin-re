@@ -12,6 +12,10 @@ function toggleWCAG (el, type, key) {
     }
 }
 
+function apply() {
+    $('#data-form').submit();
+}
+
 $(document).ready(function() {
 
     // 라디오, 체크박스 WCAG 토글 처리
