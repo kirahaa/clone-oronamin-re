@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>오로나민C 구매인증 이벤트</title>
+    <link rel="icon" href="images/favicon.png">
+    <script src="https://publish-guide.s3.ap-northeast-2.amazonaws.com/scripts/bs.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h3 class="-offscreen">오로나민C 박스를 열면 경품이 쏟아진다! 행운의 럭키볼 5개를 찾아라</h3>
+        <img src="images/oronaminc__enter--visual.png" alt="" aria-hidden="true" class="-image">
+    </header>
+    <div class="main">
+        <img src="images/oronaminc__enter--title.png" alt="경품 응모를 위한 개인정보를 입력해주세요!" class="-image">
+        <form data-control="store" data-campaign="lotte-drink-camp1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
+            <div class="form__wrap">
+                <div class="form__list">
+                    <label for="name" class="form__label">
+                        <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
+                    </label>
+                    <input type="text" id="name" class="form__input" aria-required="true">
+                </div>
+                <div class="form__list">
+                    <label for="contact" class="form__label">
+                        <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
+                    </label>
+                    <input type="text" id="contact" class="form__input" aria-required="true">
+                </div>
+                <div class="form__list">
+                    <label for="area" class="form__label">
+                        <img src="images/oronaminc__label--location.png" alt="지역" class="-image">
+                    </label>
+                    <select id="area" class="form__input">
+                        <option>지역을 선택해주세요</option>
+                        <option>강원</option>
+                        <option>경기</option>
+                        <option>경남</option>
+                    </select>
+                </div>
+                <div class="form__list">
+                    <label for="age" class="form__label">
+                        <img src="images/oronaminc__label--age.png" alt="연령대" class="-image">
+                    </label>
+                    <select id="age" class="form__input">
+                        <option>연령대를 선택해주세요</option>
+                        <option>10대</option>
+                        <option>20대</option>
+                        <option>30대</option>
+                    </select>
+                </div>
+                <!-- [D] 당첨 시 노출 -->
+                <div class="form__success">
+                    <p for="gifticon" class="form__success--title">
+                        <img src="images/oronaminc__form--title.png" alt="기프티콘 교환처" class="-image">
+                    </p>
+                    <div class="form__success--radio">
+                        <div>
+                            <input type="radio" id="cu" name="exchange_type" value="CU" class="form__radio -offscreen" aria-checked="true">
+                            <label for="cu" class="form__radio-label">
+                                <img src="images/oronaminc__radio--cu.png" alt="편의점 CU" class="-image">
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="gs25" name="exchange_type" value="GS" class="form__radio -offscreen" aria-checked="false">
+                            <label for="gs25" class="form__radio-label">
+                                <img src="images/oronaminc__radio--gs25.png" alt="편의점 GS25" class="-image">
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="seven11" name="exchange_type" value="SE" class="form__radio -offscreen" aria-checked="false">
+                            <label for="seven11" class="form__radio-label">
+                                <img src="images/oronaminc__radio--seven-eleven.png" alt="편의점 세븐일레븐" class="-image">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!--// [D] 당첨 시 노출 -->
+                <div class="form__terms">
+                    <input type="checkbox" id="terms" name="" value="1" class="form__checkbox -offscreen" aria-checked="false">
+                    <label for="terms" class="form__checkbox-label">
+                        <img src="images/oronaminc__checkbox.png" alt="개인정보 수집 이용 동의" class="-image">
+                    </label>
+                    <button type="button" class="form__terms-opener" data-toggle="modal" data-target="modal"></button>
+                    <div id="modal" role="dialog" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true" class="modal">
+                        <div class="modal__document">
+                            <img src="images/oronaminc__dialog.png" aria-hidden="true" class="-image">
+                            <button type="button" data-toggle="cookie" data-key="modal-1" data-expired="1" data-confirm="닫습니까?">24시간 보지않기</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="form__button" aria-label="작성 완료" aria-disabled="false">
+                    <img src="images/oronaminc__apply.png" alt="작성 완료 버튼" aria-hidden="true" class="-image">
+                </button>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <img src="images/oronaminc__footer.png" alt="오로나민씨" class="-image">
+
+        <ul class="footer__sns">
+            <li class="footer__item"><a href="https://www.facebook.com/Dongaotsuka" class="footer__link">&nbsp;</a></li>
+            <li class="footer__item"><a href="https://www.Instagram.com/donga_otsuka/?hl=ko" class="footer__link">&nbsp;</a></li>
+            <li class="footer__item"><a href="https://www.youtube.com/channel/UCseJ2-h0ulRpwJsit2awJ2A" class="footer__link">&nbsp;</a></li>
+            <li class="footer__item"><a href="https://shop.donga-otsuka.co.kr/" class="footer__link">&nbsp;</a></li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>
