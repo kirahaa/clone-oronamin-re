@@ -26,13 +26,19 @@ module.exports = {
             title: 'Index Title',
             hash: true,
             filename: 'index.html',
-            template: './src/pages/index.html'
+            template: './src/index.html'
         }),
         new HtmlWebpackPlugin({
             title: 'Result Title',
             hash: true,
             filename: 'result.html',
-            template: './src/pages/result.html'
+            template: './src/result.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Form Title',
+            hash: true,
+            filename: 'form.html',
+            template: './src/form.html'
         })
     ],
     module: {
