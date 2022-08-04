@@ -63,6 +63,9 @@ $fontSize: 1.6rem;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 4%;
+        &.-off {
+            display: none;
+        }
         &--title {
             width: 23.5%;
         }
@@ -178,7 +181,7 @@ $fontSize: 1.6rem;
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 450px) {
     body, html {
         font-size: 6px;
     }

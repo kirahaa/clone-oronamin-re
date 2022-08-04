@@ -1,4 +1,4 @@
 import './index';
 import './common';
-import './result';
+import './form';
 import '../scss/style.scss';
