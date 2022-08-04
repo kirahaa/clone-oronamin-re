@@ -17,40 +17,57 @@
     </header>
     <div class="main">
         <img src="images/oronaminc__enter--title.png" alt="경품 응모를 위한 개인정보를 입력해주세요!" class="-image">
-        <form id="data-form" data-control="store" data-campaign="lotte-drink-camp1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
+        <form id="data-form" data-control="store" data-campaign="test-campaign-promotion-1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
             <div class="form__wrap">
                 <div class="form__list">
                     <label for="name" class="form__label">
                         <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
                     </label>
-                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true">
+                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true" maxlength="20">
                 </div>
                 <div class="form__list">
                     <label for="contact" class="form__label">
                         <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
                     </label>
-                    <input type="text" name="oro_contact" id="contact" class="form__input" aria-required="true">
+                    <input type="tel" name="oro_contact" id="contact" class="form__input" aria-required="true" maxlength="11">
                 </div>
                 <div class="form__list">
                     <label for="area" class="form__label">
                         <img src="images/oronaminc__label--location.png" alt="지역" class="-image">
                     </label>
-                    <select name="oro_area" id="area" class="form__input">
-                        <option>지역을 선택해주세요</option>
-                        <option>강원</option>
-                        <option>경기</option>
-                        <option>경남</option>
+                    <select name="oro_area" id="area" class="form__input" required>
+                        <option value="">지역을 선택해주세요</option>
+                        <option value="">강원</option>
+                        <option value="">경기</option>
+                        <option value="">경남</option>
+                        <option value="">경북</option>
+                        <option value="">광주</option>
+                        <option value="">대구</option>
+                        <option value="">대전</option>
+                        <option value="">부산</option>
+                        <option value="">서울</option>
+                        <option value="">세종</option>
+                        <option value="">울산</option>
+                        <option value="">인천</option>
+                        <option value="">전남</option>
+                        <option value="">전북</option>
+                        <option value="">제주</option>
+                        <option value="">충남</option>
+                        <option value="">충북</option>
                     </select>
                 </div>
                 <div class="form__list">
                     <label for="age" class="form__label">
                         <img src="images/oronaminc__label--age.png" alt="연령대" class="-image">
                     </label>
-                    <select name="oro_age" id="age" class="form__input">
-                        <option>연령대를 선택해주세요</option>
-                        <option>10대</option>
-                        <option>20대</option>
-                        <option>30대</option>
+                    <select name="oro_age" id="age" class="form__input" required>
+                        <option value="">연령대를 선택해주세요</option>
+                        <option value="">10대</option>
+                        <option value="">20대</option>
+                        <option value="">30대</option>
+                        <option value="">40대</option>
+                        <option value="">50대</option>
+                        <option value="">60대 이상</option>
                     </select>
                 </div>
                 <!-- [D] 당첨 시 노출 -->
@@ -60,7 +77,7 @@
                     </p>
                     <div class="form__success--radio">
                         <div>
-                            <input type="radio" id="cu" name="exchange_type" value="CU" class="form__radio -offscreen" aria-checked="true">
+                            <input type="radio" id="cu" name="exchange_type" value="CU" class="form__radio -offscreen" aria-checked="false">
                             <label for="cu" class="form__radio-label">
                                 <img src="images/oronaminc__radio--cu.png" alt="편의점 CU" class="-image">
                             </label>
@@ -89,11 +106,11 @@
                     <div id="modal" role="dialog" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true" class="modal">
                         <div class="modal__document">
                             <img src="images/oronaminc__dialog.png" aria-hidden="true" class="-image">
-                            <button type="button" data-toggle="cookie" data-key="modal-1" data-expired="1" data-confirm="닫습니까?">24시간 보지않기</button>
+                            <button type="button" data-toggle="modal" data-target="modal" class="modal__button"></button>
                         </div>
                     </div>
                 </div>
-                <button type="button" class="form__button" aria-label="작성 완료" aria-disabled="false">
+                <button type="button" class="form__button" aria-label="작성 완료" aria-disabled="true">
                     <img src="images/oronaminc__apply.png" alt="작성 완료 버튼" aria-hidden="true" class="-image">
                 </button>
             </div>
@@ -113,7 +130,7 @@
 <script>
     async function get() {
         let result = await backend.reqCampaignList({
-            campaignCode: 'lotte-drink-camp1'
+            campaignCode: 'test-campaign-promotion-1'
         });
     }
 </script>

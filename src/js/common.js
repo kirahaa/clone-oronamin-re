@@ -26,7 +26,7 @@ $(document).ready(function() {
             toggleWCAG($(this), 'checkbox', 'aria-checked');
             // 약관 동의 여부에 따른 하단 '작성 완료' 버튼 활성/비활성 처리
             if($(this).attr('aria-checked') == 'true') {
-                $('.form__button').attr('aria-checked', 'false');
+                $('.form__button').attr('aria-disabled', 'false');
                 $('.form__button').on('click',apply);
             } else {
                 $('.form__button').attr('aria-disabled', 'true');
