@@ -22,8 +22,17 @@ $(function() {
         }
     })
     if(result === 'fail') {
-        $('.form__success').classList.add('-off');
+        $('.form__success').addClass('-off');
     }
+    $('#submitBtn').on('click', function () {
+        location.href = './confirm.html'+ '?' + result;
+    })
+    $('#confirmBtn').on('click', function () {
+        alert('이벤트 참여가 완료되었습니다.')
+    })
+    $('#rewriteBtn').on('click', function () {
+        location.href = "./form.html" + '?' + result;
+    })
 })
 
 // 라디오, 체크박스 WCAG 토글 처리

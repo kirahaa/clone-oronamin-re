@@ -39,6 +39,18 @@ module.exports = {
             hash: true,
             filename: 'form.html',
             template: './src/form.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Confirm Title',
+            hash: true,
+            filename: 'confirm.html',
+            template: './src/confirm.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Complete Title',
+            hash: true,
+            filename: 'complete.html',
+            template: './src/complete.html'
         })
     ],
     module: {

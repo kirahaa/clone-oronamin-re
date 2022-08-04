@@ -12,10 +12,18 @@ $fontSize: 1.6rem;
 }
 .main {
     position: relative;
+    &.--confirm {
+        padding-bottom: 20%;
+    }
     &__button {
         position: absolute;
         display: block;
         background-color: $temp;
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 7%;
+        }
         &.--index {
             bottom: 3%;
             margin: 0 21%;
@@ -27,6 +35,10 @@ $fontSize: 1.6rem;
             margin: 0 13%;
             padding: 5.5%;
             width: 74%;
+        }
+        &.--confirm {
+            position: relative;
+            width: 47.4%;
         }
     }
 }
@@ -42,11 +54,17 @@ $fontSize: 1.6rem;
 
     &__wrap {
         padding: 0 10% 10%;
+        &.--confirm {
+            padding: 0 10%;
+        }
     }
     &__list {
         display: flex;
         justify-content: space-between;
         margin-bottom: 4%;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
     &__label {
         display: inline-block;
@@ -57,6 +75,11 @@ $fontSize: 1.6rem;
         padding: 2%;
         border: 1px solid #000;
         font-size: 2rem;
+        &.--confirm {
+            border: 1px solid #eee;
+            background: #eee;
+            text-align: center;
+        }
     }
     &__success {
         display: flex;
