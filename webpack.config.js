@@ -51,6 +51,12 @@ module.exports = {
             hash: true,
             filename: 'complete.html',
             template: './src/complete.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Prize Title',
+            hash: true,
+            filename: 'prize.html',
+            template: './src/prize.html'
         })
     ],
     module: {

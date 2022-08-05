@@ -41,6 +41,24 @@ $fontSize: 1.6rem;
             width: 47.4%;
         }
     }
+    &__link {
+        position: absolute;
+        bottom: 44%;
+        left: 20%;
+        width: 60%;
+        height: 10%;
+        &:nth-of-type(2) {
+            bottom: 27.5%;
+        }
+        &.--prize {
+            display: block;
+            position: relative;
+            left: auto;
+            right: auto;
+            margin: 10% auto;
+            width: 67.5%;
+        }
+    }
 }
 [data-control="toggle"] {
     .-image {

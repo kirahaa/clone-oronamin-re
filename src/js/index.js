@@ -1,9 +1,9 @@
 /* for index.html */
 
-function winning() {
+export function winning() {
     location.href = "./result.html?win"
 }
-function failing() {
+export function failing() {
     location.href = "./result.html?fail"
 }
 
