@@ -7,7 +7,6 @@ $fontSize: 1.6rem;
 .wrap {
     max-width: 75rem;
     margin: 0 auto;
-    //background-color: $temp;
     font-size: $fontSize;
 }
 .main {
@@ -18,7 +17,6 @@ $fontSize: 1.6rem;
     &__button {
         position: absolute;
         display: block;
-        background-color: $temp;
         &-wrap {
             display: flex;
             justify-content: space-between;
@@ -160,7 +158,6 @@ $fontSize: 1.6rem;
             right: 2%;
             width: 20%;
             height: 100%;
-            background: $temp;
         }
     }
     &__button {
@@ -201,7 +198,6 @@ $fontSize: 1.6rem;
         margin: 0 auto;
         width: 39%;
         height: 5%;
-        background: $temp;
     }
 }
 .footer {
