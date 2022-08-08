@@ -83,6 +83,9 @@ $fontSize: 1.6rem;
         &:last-of-type {
             margin-bottom: 0;
         }
+        &.-off {
+            display: none;
+        }
     }
     &__label {
         display: inline-block;

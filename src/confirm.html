@@ -16,35 +16,37 @@
     </header>
     <div class="main --confirm">
         <img src="images/oronaminc__submit--title.png" alt="" class="-image">
-        <div class="form__wrap --confirm">
-            <div class="form__list">
-                <label for="name" class="form__label">
-                    <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
-                </label>
-                <input type="text" name="oro_name" id="name" value="이름" class="form__input --confirm" aria-required="true" readonly>
+        <form>
+            <div class="form__wrap --confirm">
+                <div class="form__list">
+                    <label for="name" class="form__label">
+                        <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
+                    </label>
+                    <input type="text" name="oro_name" id="name" value="" class="form__input --confirm" aria-required="true" readonly>
+                </div>
+                <div class="form__list">
+                    <label for="contact" class="form__label">
+                        <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
+                    </label>
+                    <input type="tel" name="oro_contact" id="contact" value="" class="form__input --confirm" aria-required="true" maxlength="11" readonly>
+                </div>
+                <div id="form__confirm" class="form__list">
+                    <p class="form__success--title">
+                        <img src="images/oronaminc__form--title.png" alt="기프티콘 교환처" class="-image">
+                    </p>
+                    <input type="text" value="CU" class="form__input --confirm" aria-required="true" readonly>
+                </div>
             </div>
-            <div class="form__list">
-                <label for="contact" class="form__label">
-                    <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
-                </label>
-                <input type="tel" name="oro_contact" id="contact" value="01012341234" class="form__input --confirm" aria-required="true" maxlength="11" readonly>
+            <img src="images/oronaminc__submit--desc.png" alt=""  class="-image">
+            <div class="main__button-wrap">
+                <button type="button" id="confirmBtn" class="main__button --confirm">
+                    <img src="images/oronaminc__confirm.png" alt="확인" class="-image">
+                </button>
+                <button type="button" id="rewriteBtn" class="main__button --confirm">
+                    <img src="images/oronaminc__rewrite.png" alt="다시 작성" class="-image">
+                </button>
             </div>
-            <div class="form__list">
-                <p class="form__success--title">
-                    <img src="images/oronaminc__form--title.png" alt="기프티콘 교환처" class="-image">
-                </p>
-                <input type="text" value="CU" class="form__input --confirm" aria-required="true" readonly>
-            </div>
-        </div>
-        <img src="images/oronaminc__submit--desc.png" alt=""  class="-image">
-        <div class="main__button-wrap">
-            <button type="button" id="confirmBtn" class="main__button --confirm">
-                <img src="images/oronaminc__confirm.png" alt="확인" class="-image">
-            </button>
-            <button type="button" id="rewriteBtn" class="main__button --confirm">
-                <img src="images/oronaminc__rewrite.png" alt="다시 작성" class="-image">
-            </button>
-        </div>
+        </form>
     </div>
     <footer class="footer">
         <img src="images/oronaminc__footer.png" alt="오로나민씨" class="-image">
@@ -57,5 +59,19 @@
         </ul>
     </footer>
 </div>
+<script>
+    let confirmQuery = decodeURI(location.search).split('?');
+    let queryName = confirmQuery[2];
+    let queryContact = confirmQuery[3];
+    window.onload = function () {
+        document.querySelector('#name').value = queryName;
+        document.querySelector('#contact').value = queryContact;
+    }
+    // async function get() {
+    //     let result = await backend.reqCampaignList({
+    //         campaignCode: 'test-campaign-promotion-1'
+    //     })
+    // }
+</script>
 </body>
 </html>

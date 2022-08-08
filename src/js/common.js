@@ -23,15 +23,29 @@ $(function() {
     })
     if(result === 'fail') {
         $('.form__success').addClass('-off');
+        $('#form__confirm').addClass('-off');
     }
-    $('#submitBtn').on('click', function () {
-        location.href = './confirm.html'+ '?' + result;
-    })
     $('#confirmBtn').on('click', function () {
         alert('이벤트 참여가 완료되었습니다.')
     })
     $('#rewriteBtn').on('click', function () {
-        location.href = "./form.html" + '?' + result;
+        location.href = "./form.html?" + result;
+    })
+    // 라디오, 체크박스 WCAG 토글 처리
+    $('input').on('click', function () {
+        if ($(this).attr('type') == 'radio') {
+            toggleWCAG($(this), 'radio', 'aria-checked');
+        } else if ($(this).attr('type') == 'checkbox') {
+            toggleWCAG($(this), 'checkbox', 'aria-checked');
+            // 약관 동의 여부에 따른 하단 '작성 완료' 버튼 활성/비활성 처리
+            if($(this).attr('aria-checked') == 'true') {
+                $('.form__button').attr('aria-disabled', 'false');
+                $('.form__button').on('click',apply);
+            } else {
+                $('.form__button').attr('aria-disabled', 'true');
+                $('.form__button').unbind('click', apply);
+            }
+        }
     })
 })
 
@@ -51,22 +65,3 @@ function apply() {
     $('#data-form').submit();
 }
 
-$(document).ready(function() {
-
-    // 라디오, 체크박스 WCAG 토글 처리
-    $('input').on('click', function () {
-        if ($(this).attr('type') == 'radio') {
-            toggleWCAG($(this), 'radio', 'aria-checked');
-        } else if ($(this).attr('type') == 'checkbox') {
-            toggleWCAG($(this), 'checkbox', 'aria-checked');
-            // 약관 동의 여부에 따른 하단 '작성 완료' 버튼 활성/비활성 처리
-            if($(this).attr('aria-checked') == 'true') {
-                $('.form__button').attr('aria-disabled', 'false');
-                $('.form__button').on('click',apply);
-            } else {
-                $('.form__button').attr('aria-disabled', 'true');
-                $('.form__button').unbind('click', apply);
-            }
-        }
-    })
-})

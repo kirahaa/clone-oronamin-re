@@ -17,19 +17,19 @@
     </header>
     <div class="main">
         <img src="images/oronaminc__enter--title.png" alt="경품 응모를 위한 개인정보를 입력해주세요!" class="-image">
-        <form id="data-form" data-control="store" data-campaign="test-campaign-promotion-1" data-success="오케이" data-success-callback="() => {alert('success')}" data-fail-callback="() => alert('fail')">
+        <form id="data-form" data-control="store" data-campaign="test-campaign-promotion-1" data-success="응모되었습니다." data-fail="문제가 발생했습니다." data-success-callback="successFunction" data-fail-callback="() => alert('fail')">
             <div class="form__wrap">
                 <div class="form__list">
                     <label for="name" class="form__label">
                         <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
                     </label>
-                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true">
+                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true" required>
                 </div>
                 <div class="form__list">
                     <label for="contact" class="form__label">
                         <img src="images/oronaminc__label--contact.png" alt="연락처" class="-image">
                     </label>
-                    <input type="tel" name="oro_contact" id="contact" class="form__input" aria-required="true" maxlength="11">
+                    <input type="tel" name="oro_contact" id="contact" class="form__input" aria-required="true" maxlength="11" required>
                 </div>
                 <div class="form__list">
                     <label for="area" class="form__label">
@@ -128,10 +128,12 @@
     </footer>
 </div>
 <script>
-    async function get() {
-        let result = await backend.reqCampaignList({
-            campaignCode: 'test-campaign-promotion-1'
-        });
+    let formResult = location.search.split('?')[1];
+    let formName = document.querySelector('#name');
+    let formContact = document.querySelector('#contact');
+
+    function successFunction() {
+        location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value;
     }
 </script>
 </body>
