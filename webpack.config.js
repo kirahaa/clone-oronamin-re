@@ -3,6 +3,37 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const htmlPageNames = [
+    'index',
+    'result',
+    'form',
+    'form2',
+    'confirm',
+    'complete',
+    'prize'
+]
+
+let webpackplugin = [
+    new MiniCssExtractPlugin({
+        filename: '[name].css',
+    }),
+    new CopyPlugin({
+        patterns: [
+            { from: 'src/images', to: 'images' }
+        ]
+    })
+]
+
+htmlPageNames.forEach(function (name, index) {
+    webpackplugin.push(
+        new HtmlWebpackPlugin({
+            template: `src/${name}.html`,
+            filename: `${name}.html`,
+            hash: true,
+        })
+    )
+})
+
 module.exports = {
     mode: 'development',
     watch: true,
@@ -13,52 +44,7 @@ module.exports = {
         assetModuleFilename: 'images/[name][ext][query]',
         clean: true,
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-        }),
-        new CopyPlugin({
-            patterns: [
-                { from: 'src/images', to: 'images' }
-            ]
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Index Title',
-            hash: true,
-            filename: 'index.html',
-            template: './src/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Result Title',
-            hash: true,
-            filename: 'result.html',
-            template: './src/result.html'
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Form Title',
-            hash: true,
-            filename: 'form.html',
-            template: './src/form.html'
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Confirm Title',
-            hash: true,
-            filename: 'confirm.html',
-            template: './src/confirm.html'
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Complete Title',
-            hash: true,
-            filename: 'complete.html',
-            template: './src/complete.html'
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Prize Title',
-            hash: true,
-            filename: 'prize.html',
-            template: './src/prize.html'
-        })
-    ],
+    plugins: webpackplugin,
     module: {
         rules: [
             {
