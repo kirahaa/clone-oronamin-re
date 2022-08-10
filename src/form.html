@@ -84,13 +84,13 @@
                             </label>
                         </div>
                         <div>
-                            <input type="radio" id="gs25" name="exchange_type" value="GS" class="form__radio -offscreen" aria-checked="false">
+                            <input type="radio" id="gs25" name="exchange_type" value="GS25" class="form__radio -offscreen" aria-checked="false">
                             <label for="gs25" class="form__radio-label">
                                 <img src="images/oronaminc__radio--gs25.png" alt="편의점 GS25" class="-image">
                             </label>
                         </div>
                         <div>
-                            <input type="radio" id="seven11" name="exchange_type" value="SE" class="form__radio -offscreen" aria-checked="false">
+                            <input type="radio" id="seven11" name="exchange_type" value="세븐일레븐" class="form__radio -offscreen" aria-checked="false">
                             <label for="seven11" class="form__radio-label">
                                 <img src="images/oronaminc__radio--seven-eleven.png" alt="편의점 세븐일레븐" class="-image">
                             </label>
@@ -132,9 +132,22 @@
     let formResult = location.search.split('?')[1];
     let formName = document.querySelector('#name');
     let formContact = document.querySelector('#contact');
+    let radios = document.getElementsByName('exchange_type');
+    let formExchangeType = null;
+    radios.forEach(function(radio) {
+        radio.addEventListener('click', checkRadio);
+    })
+
+    function checkRadio(e) {
+        formExchangeType = e.target.value;
+    }
 
     function successFunction() {
-        location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value;
+        if(formResult === 'fail') {
+            location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value;
+        } else {
+            location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value + '?' + formExchangeType;
+        }
     }
 </script>
 </body>

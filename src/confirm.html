@@ -34,7 +34,7 @@
                     <p class="form__success--title">
                         <img src="images/oronaminc__form--title.png" alt="기프티콘 교환처" class="-image">
                     </p>
-                    <input type="text" value="CU" class="form__input --confirm" aria-required="true" readonly>
+                    <input type="text" id="exchange" value="" class="form__input --confirm" aria-required="true" readonly>
                 </div>
             </div>
             <img src="images/oronaminc__submit--desc.png" alt=""  class="-image">
@@ -63,9 +63,11 @@
     let confirmQuery = decodeURI(location.search).split('?');
     let queryName = confirmQuery[2];
     let queryContact = confirmQuery[3];
+    let queryExchange = confirmQuery[4];
     window.onload = function () {
         document.querySelector('#name').value = queryName;
         document.querySelector('#contact').value = queryContact;
+        document.querySelector('#exchange').value = queryExchange;
     }
     // async function get() {
     //     let result = await backend.reqCampaignList({
