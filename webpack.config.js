@@ -13,7 +13,7 @@ const htmlPageNames = [
     'prize'
 ]
 
-let webpackplugin = [
+let webpackPlugins = [
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),
@@ -25,7 +25,7 @@ let webpackplugin = [
 ]
 
 htmlPageNames.forEach(function (name, index) {
-    webpackplugin.push(
+    webpackPlugins.push(
         new HtmlWebpackPlugin({
             template: `src/${name}.html`,
             filename: `${name}.html`,
@@ -44,7 +44,7 @@ module.exports = {
         assetModuleFilename: 'images/[name][ext][query]',
         clean: true,
     },
-    plugins: webpackplugin,
+    plugins: webpackPlugins,
     module: {
         rules: [
             {
