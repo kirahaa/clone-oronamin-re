@@ -36,7 +36,6 @@ htmlPageNames.forEach(function (name, index) {
 
 module.exports = {
     mode: 'development',
-    watch: true,
     entry: './src/js/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -65,5 +64,11 @@ module.exports = {
                 ],
             }
         ]
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        port: 3000,
     }
 }
