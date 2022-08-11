@@ -6,5 +6,5 @@
 npm install
 
 # 개발(development)
-npx webpack
+npm start
 ```
