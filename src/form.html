@@ -99,7 +99,7 @@
                 </div>
                 <!--// [D] 당첨 시 노출 -->
                 <div class="form__terms">
-                    <input type="checkbox" id="terms" name="oro_terms" value="1" class="form__checkbox -offscreen" aria-checked="false">
+                    <input type="checkbox" id="terms" name="oro_terms" value="1" class="form__checkbox -offscreen" aria-checked="true" checked required>
                     <label for="terms" class="form__checkbox-label">
                         <img src="images/oronaminc__checkbox.png" alt="개인정보 수집 이용 동의" class="-image">
                     </label>
@@ -134,6 +134,13 @@
     let formContact = document.querySelector('#contact');
     let radios = document.getElementsByName('exchange_type');
     let formExchangeType = null;
+
+    if(formResult === 'win') {
+        radios.forEach(function(radio) {
+            radio.required = true;
+        })
+    }
+
     radios.forEach(function(radio) {
         radio.addEventListener('click', checkRadio);
     })
