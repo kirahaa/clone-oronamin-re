@@ -23,7 +23,8 @@
                     <label for="name" class="form__label">
                         <img src="images/oronaminc__label--name.png" alt="이름" class="-image">
                     </label>
-                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true" required>
+                    <!-- TODO:: data-message 동작 안함 -->
+                    <input type="text" name="oro_name" id="name" class="form__input" aria-required="true" required data-message="테스트">
                 </div>
                 <div class="form__list">
                     <label for="contact" class="form__label">
@@ -36,13 +37,27 @@
                         <img src="images/oronaminc__label--location.png" alt="지역" class="-image">
                     </label>
                     <!-- select2 -->
-                    <!-- TODO:: placeholder 안먹음 -->
-                    <select name="oro_area" id="area" role="listbox" data-control="select2" data-hide-search="true" data-placeholder="지역을 선택해주세요.">
-                        <option disabled="disabled">지역을 선택해주세요.</option>
-                        <option>옵션1</option>
-                        <option>옵션2</option>
-                        <option>옵션3</option>
-                    </select>                    <!-- select2 -->
+                    <!-- TODO:: placeholder, required 안먹음 -->
+                    <select name="oro_area" id="area" role="listbox" data-control="select2" data-hide-search="true" data-placeholder="지역을 선택해주세요." required>
+                        <option>지역을 선택해주세요</option>
+                        <option>강원</option>
+                        <option>경기</option>
+                        <option>경남</option>
+                        <option>경북</option>
+                        <option>광주</option>
+                        <option>대구</option>
+                        <option>대전</option>
+                        <option>부산</option>
+                        <option>서울</option>
+                        <option>세종</option>
+                        <option>울산</option>
+                        <option>인천</option>
+                        <option>전남</option>
+                        <option>전북</option>
+                        <option>제주</option>
+                        <option>충남</option>
+                        <option>충북</option>
+                    </select>
                     <!--// select2 -->
                 </div>
                 <div class="form__list">
@@ -72,13 +87,13 @@
                             </label>
                         </div>
                         <div>
-                            <input type="radio" id="gs25" name="exchange_type" value="GS" class="form__radio -offscreen" aria-checked="false">
+                            <input type="radio" id="gs25" name="exchange_type" value="GS25" class="form__radio -offscreen" aria-checked="false">
                             <label for="gs25" class="form__radio-label">
                                 <img src="images/oronaminc__radio--gs25.png" alt="편의점 GS25" class="-image">
                             </label>
                         </div>
                         <div>
-                            <input type="radio" id="seven11" name="exchange_type" value="SE" class="form__radio -offscreen" aria-checked="false">
+                            <input type="radio" id="seven11" name="exchange_type" value="세븐일레븐" class="form__radio -offscreen" aria-checked="false">
                             <label for="seven11" class="form__radio-label">
                                 <img src="images/oronaminc__radio--seven-eleven.png" alt="편의점 세븐일레븐" class="-image">
                             </label>
@@ -87,7 +102,7 @@
                 </div>
                 <!--// [D] 당첨 시 노출 -->
                 <div class="form__terms">
-                    <input type="checkbox" id="terms" name="oro_terms" value="1" class="form__checkbox -offscreen" aria-checked="false">
+                    <input type="checkbox" id="terms" name="oro_terms" value="1" class="form__checkbox -offscreen" aria-checked="true" checked required>
                     <label for="terms" class="form__checkbox-label">
                         <img src="images/oronaminc__checkbox.png" alt="개인정보 수집 이용 동의" class="-image">
                     </label>
@@ -120,9 +135,29 @@
     let formResult = location.search.split('?')[1];
     let formName = document.querySelector('#name');
     let formContact = document.querySelector('#contact');
+    let radios = document.getElementsByName('exchange_type');
+    let formExchangeType = null;
+
+    if(formResult === 'win') {
+        radios.forEach(function(radio) {
+            radio.required = true;
+        })
+    }
+
+    radios.forEach(function(radio) {
+        radio.addEventListener('click', checkRadio);
+    })
+
+    function checkRadio(e) {
+        formExchangeType = e.target.value;
+    }
 
     function successFunction() {
-        location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value;
+        if(formResult === 'fail') {
+            location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value;
+        } else {
+            location.href = './confirm.html?' + formResult + '?' + formName.value + '?' + formContact.value + '?' + formExchangeType;
+        }
     }
 </script>
 </body>

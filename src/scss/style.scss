@@ -221,6 +221,24 @@ $fontSize: 1.6rem;
     }
 }
 
+// select
+.select2-container {
+    width: 70% !important;
+}
+.select2-container--default .select2-selection--single {
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 0;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 32%;
+}
+
 @media (max-width: 450px) {
     body, html {
         font-size: 6px;
