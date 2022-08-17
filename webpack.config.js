@@ -38,7 +38,7 @@ module.exports = {
     mode: 'development',
     entry: './src/js/main.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         filename: '[name].bundle.js',
         assetModuleFilename: 'images/[name][ext][query]',
         clean: true,
@@ -67,7 +67,7 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'docs'),
         },
         port: 3000,
     }
