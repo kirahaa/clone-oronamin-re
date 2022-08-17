@@ -1,0 +1,422 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
+  \**************************************************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, time, figure, article, nav, header, footer, hgroup, video, audio, aside, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Apple SD Gothic Neo", "Dotum", arial, Sans-serif;
+  color: #000;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+
+fieldset, img {
+  border: 0 none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table caption {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+figure, article, header, footer, nav, hgroup, video, audio, aside, main {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active, a:hover, a:focus {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, select, textarea, button {
+  vertical-align: middle;
+  color: inherit;
+  resize: none;
+}
+
+/* INPUT */
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=number],
+input[type=search],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+input[type=radio] {
+  border-radius: 100%;
+}
+
+input[type=submit], input[type=button], button {
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* HTML5 RESET */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, video {
+  display: block;
+}
+
+address, caption, em, i {
+  font-style: normal;
+  font-weight: normal;
+}
+
+iframe, embed, object, video {
+  max-width: 100%;
+}
+
+/* IPHONE */
+input:disabled, textarea:disabled {
+  opacity: 1;
+  -webkit-text-fill-color: inherit;
+}
+
+input[type=text], input[type=password], textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* ie input icon remove */
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html, body {
+  font-size: 10px;
+}
+
+.-offscreen {
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.-image {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: auto;
+}
+
+.wrap {
+  max-width: 75rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+.main {
+  position: relative;
+}
+.main.--confirm {
+  padding-bottom: 20%;
+}
+.main__button {
+  position: absolute;
+  display: block;
+}
+.main__button-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7%;
+}
+.main__button.--index {
+  bottom: 3%;
+  margin: 0 21%;
+  padding: 10%;
+  width: 60%;
+}
+.main__button.--result {
+  bottom: 6%;
+  margin: 0 13%;
+  padding: 9.5%;
+  width: 74%;
+}
+.main__button.--confirm {
+  position: relative;
+  width: 47.4%;
+}
+.main__link {
+  position: absolute;
+  bottom: 44%;
+  left: 20%;
+  width: 60%;
+  height: 10%;
+}
+.main__link:nth-of-type(2) {
+  bottom: 27.5%;
+}
+.main__link.--prize {
+  display: block;
+  position: relative;
+  left: auto;
+  right: auto;
+  margin: 10% auto;
+  width: 67.5%;
+}
+
+[data-control=toggle] .-image {
+  display: none;
+}
+[data-control=toggle] .-image.-on {
+  display: block;
+}
+
+.form__wrap {
+  padding: 0 10% 10%;
+}
+.form__wrap.--confirm {
+  padding: 0 10%;
+}
+.form__list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4%;
+}
+.form__list:last-of-type {
+  margin-bottom: 0;
+}
+.form__list.-off {
+  display: none;
+}
+.form__label {
+  display: inline-block;
+  width: 23.5%;
+}
+.form__input {
+  width: 70%;
+  padding: 2%;
+  border: 1px solid #000;
+  font-size: 2rem;
+}
+.form__input.--confirm {
+  border: 1px solid #eee;
+  background: #eee;
+  text-align: center;
+}
+.form__success {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4%;
+}
+.form__success.-off {
+  display: none;
+}
+.form__success--title {
+  width: 23.5%;
+}
+.form__success--radio {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 70%;
+  gap: 4%;
+}
+.form__radio-label {
+  display: block;
+  position: relative;
+}
+.form__radio[aria-checked=true] + .form__radio-label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.4rem;
+  height: 63%;
+  background: center/cover no-repeat url(images/oronaminc__radio--checked.png);
+}
+.form__checkbox-label {
+  display: block;
+  position: relative;
+}
+.form__checkbox[aria-checked=true] + .form__checkbox-label::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 3.5%;
+  width: 3.8rem;
+  height: 42%;
+  background: center/cover no-repeat url(images/oronaminc__radio--checked.png);
+}
+.form__terms {
+  position: relative;
+  margin-bottom: 10%;
+}
+.form__terms-opener {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  width: 20%;
+  height: 100%;
+}
+.form__button {
+  display: block;
+  width: 54%;
+  margin: 0 auto;
+}
+.form__button[aria-disabled=true] {
+  opacity: 0.19;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal[aria-hidden=false] {
+  display: block;
+}
+.modal[aria-hidden=true] {
+  display: none;
+}
+.modal__document {
+  position: relative;
+  width: 47.5rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.modal__button {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 39%;
+  height: 5%;
+}
+
+.footer {
+  position: relative;
+}
+.footer__sns {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  width: 46%;
+  padding: 6% 5%;
+}
+.footer__item {
+  height: 5rem;
+}
+.footer__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.select2-container {
+  width: 70% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 32%;
+}
+
+@media (max-width: 450px) {
+  body, html {
+    font-size: 6px;
+  }
+  .modal__document {
+    width: 100%;
+  }
+  .footer__sns {
+    gap: 1rem;
+  }
+}
